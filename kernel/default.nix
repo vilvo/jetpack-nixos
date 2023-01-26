@@ -44,10 +44,10 @@ in hackedPkgs.buildLinux (args // rec {
   # postPatch. This is not very efficient.
   src = pkgs.applyPatches {
     src = fetchFromGitHub {
-      owner = "OE4T";
+      owner = "vadika";
       repo = "linux-tegra-5.10";
-      rev = "63c149056a7ef7bf146a747e7c8a179c1aaf72f7"; # 2022-08-18
-      sha256 = "sha256-sIk3gxCuWHpFXjxqFIUGP1ApWsq7+fCC4nFB693Sdg0=";
+      rev = "9ca6e31d17782e0cf5249eb59f71dcd7d8903303"; # nvidia-gicv3-dts-patch
+      sha256 = nixpkgs.lib.fakeSha256;
     };
     # Remove device tree overlays with some incorrect "remote-endpoint" nodes.
     # They are strings, but should be phandles. Otherwise, it fails to compile
